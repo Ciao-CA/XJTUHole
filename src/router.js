@@ -5,6 +5,7 @@ import Home from "@/components/Home"
 import Main from "@/components/Main/Main";
 import Mine from "@/components/Mine/Mine";
 import Upload from "@/components/Upload/Upload";
+// import Sign from "@/components/Sign";
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,10 @@ const routes=[
         path: '/login',
         component: Login
     },
+    // {
+    //     path: '/sign',
+    //     component: Sign
+    // },
     {
         path: '/home',
         component: Home,
