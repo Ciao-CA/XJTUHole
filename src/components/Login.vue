@@ -80,13 +80,18 @@
                 },500)
             },
             signup() {
+                window.sessionStorage.setItem('login-idx', 1)
                 this.idx=1
             },
             resetinfo() {
                 this.$refs.signFormRef.resetFields();
             },
+            enterinfo() {
+                this.onSubmit()
+            },
             goBack() {
                 // console.log(123)
+                window.sessionStorage.setItem('login-idx', 0)
                 this.idx=0
             }
         }

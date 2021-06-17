@@ -5,16 +5,18 @@
             <div class="name" v-for="(item,index) in message.name" :key="index">{{item}}</div>
             <div class="time" v-for="(item,index) in message.date" :key="index">{{item}}</div>
         </div>
-        <div class="bodybar">
+        <div class="bodybar" @click="commentview">
             <h4 v-for="(item,index) in message.title" :key="index">{{item}}</h4>
             <p v-for="(item,index) in message.passage" :key="index">
                 {{item}}
             </p>
         </div>
+        <Attitude></Attitude>
     </div>
 </template>
 
 <script>
+    import Attitude from "@/components/Attitude/Attitude";
     export default {
         name: "MainItem",
         data() {
@@ -25,6 +27,14 @@
                     'title': ['世界缺一个活泼的我'],
                     'passage': ['上班没有人可以说话,下班回家没有人说话,工作不顺,压力大,无处可逃']
                 }
+            }
+        },
+        components: {
+            Attitude
+        },
+        methods : {
+            commentview() {
+                this.$router.push('/comment')
             }
         }
     }
